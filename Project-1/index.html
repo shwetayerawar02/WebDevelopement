@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showModal() {
+            document.getElementById('contactModal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('contactModal')) {
+                closeModal();
+            }
+        }
+
+        let currentSlide = 1;
+        window.onload = function() {
+            const slides = document.getElementsByClassName('carousel-slide');
+            const dots = document.getElementsByClassName('dot');
+
+            function showSlide(n) {
+                if (n > slides.length) { n = 1; }
+                if (n < 1) { n = slides.length; }
+                
+                currentSlide = n;
+                
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.transform = `translateX(${(i - currentSlide + 1) * 100}%)`;
+                }
+
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(' active', '');
+                }
+
+                dots[currentSlide - 1].className += ' active';
+            }
+
+            // Initialize the carousel
+            showSlide(currentSlide);
+
+            // Add click event listeners to dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].addEventListener('click', function() {
+                    showSlide(i + 1);
+                });
+            }
+        };
+
+        function changeImage(imageSrc) {
+    document.getElementById('mainImage').src = imageSrc;
+    
+    // Remove active class from all items
+    var items = document.querySelectorAll('.module_4-item');
+    items.forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Add active class to the clicked item
+    event.currentTarget.classList.add('active');
+}
+
+        
+    </script>
+</head>
+<body>
+    <div class="module_1">
+        <div class="container">
+            <div class="text-section">
+                <h1>AWARD WINNING</h1>
+                <h2>DIGITAL MARKETING AGENCY</h2>
+                <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante et elit fringilla ac at purus, Morbi sed lacus nec risus finibus feugiat et fermentum</p>
+                <div class="button">
+                    <a onclick="showModal()">CONTACT US</a>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="IMG_6519.PNG" alt="Digital Marketing Agency">
+            </div>
+        </div>
+
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Talk to us</h2>
+                <form>
+                    <input type="email" placeholder="Work email*" required>
+                    <input type="text" placeholder="First name*" required>
+                    <input type="text" placeholder="Last name*" required>
+                    <label>
+                        <input type="checkbox" required>
+                        <span style="padding-left: 1%; color: rgb(92, 92, 92);">I agree to terms and conditions, and provide consent to send </span><br><span style="padding-left: 6%; color: rgb(92, 92, 92);"> me communication.</span>
+                    </label>
+                    
+                </form>
+                <button class="button_1" type="submit">Contact Us</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="module_2">
+        <div class="div_container">
+            <div class="div_left-section">
+                <h2>WHAT WE DO</h2>
+                <h1>SERVICES PROVIDE FOR YOU</h1>
+            </div>
+            <div class="div_right-section">
+                <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac at purus. Morbi sed lacus nec risus finibus feugiat et fermentum.</p>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-slide" id="slide1">
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGExdDNnYnR5cDRvNGVzbDYwODJ0NmE0cWF2OGllc2NqN3JqdnRmMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WYsDOuRz0dcKQ/giphy.gif" alt="Image 1">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWFzMXV5N3F6cnVheGZjcnl4ZndhdmcyZzVneG5hanlzdDB1ZXJvYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pKTsRoVkdxbdC/giphy.gif" alt="Image 2">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzVidmkwYW5ybzQxd253aG94cXptZTFpaWF6dWEydDBmYWFoN2lxZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IWsz1enyrhjBm/giphy.gif" alt="Image 3">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXR0aHl4amxmMHg2b21jcjN3bDR1a2xiaG80cGYyNWtvZWxnOXI0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VOsA1oVVqV1VS/giphy.gif" alt="Image 4">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide" id="slide2">
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExajBwM2o1N3Z3cjFtZGY0NGJwM3pnMmtsNTJ5cGs3NzF4czlpMTdpOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8PpNcdatWAvWk3s7c9/giphy.gif" alt="Image 5">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExanlubDRpMTZxbHJwd3hjcXJ1OTl1aTBsaHR4eHFodGJqdGVpN21yNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9gDhdaNwPNVSw/giphy.gif" alt="Image 6">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDdnMDl3a2pkODBnODQ5Z3J6MjFsdjQwbDdkZzJmZzUyb2oycHQzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LKTFkDdiS8KI0/giphy.gif" alt="Image 7">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDhob3ZneGpmYnI1NmN2ZG5iNzhzdXZxemFqbmtjZTAyazA5bXdnYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A8hGDygXMfOta/giphy.gif" alt="Image 8">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide" id="slide3">
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW5uemc1emY0b21kMGV5eDAwYzIxM3FvNmk1bzF4N3RlajMxamdiaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GnqtKr7hKpAOs/giphy.gif" alt="Image 9">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2xoZW9xZmdudG9yMHdvc253bXl2Z2FycHR3OTdtMW80cHQzaWFkYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12jpXeDwzTCHF6/giphy.gif" alt="Image 10">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDhibWpmNjE0bnhhcGZmMTVsaDZ4ZnlydW85b2lydzdnaGRyOW1vaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/doQ7gLdLD9hw8VTrLV/giphy.gif" alt="Image 11">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTc4OHlhZHFveG54NXhqbXJ4dmIxNjhzbWh0M2UyMjBzcXpubmdrYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mr1yFeKfbOmE4QUgLU/giphy.gif" alt="Image 12">
+                    <div class="hover-content">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Marbi sed lacus nec risus finibus teugiat <br> et fermentum nibh. Pellentesque</p>
+                        <button onclick="window.location.href='https://www.google.com'">Read More 	&rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <span class="dot" onclick="showSlide(1)"></span>
+            <span class="dot" onclick="showSlide(2)"></span>
+            <span class="dot" onclick="showSlide(3)"></span>
+        </div>
+    </div>
+    <div class="module_3">
+        <div class="module_3-header">
+            <p>WHY CHOOSE US</p>
+            <h1>WHY WE ARE BEST</h1>
+        </div>
+        <div class="module_3-content">
+            <div class="module_3-item">
+                <img src="Edit_1.png" alt="Clarified Vision & Target"> <!-- Replace with the correct path to your image -->
+                <h3>Clarified Vision & Target</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy.</p>
+            </div>
+            <div class="module_3-item">
+                <img src="EDIT_2.PNG" alt="High Performance"> <!-- Replace with the correct path to your image -->
+                <h3>High Performance</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy.</p>
+            </div>
+            <div class="module_3-item">
+                <img src="EDIT_4.PNG" alt="Maintain Security"> <!-- Replace with the correct path to your image -->
+                <h3>Maintain Security</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy.</p>
+            </div>
+            <div class="module_3-item">
+                <img src="EDIT_3.PNG" alt="Better Strategy & Quality"> <!-- Replace with the correct path to your image -->
+                <h3>Better Strategy & Quality</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="module_4">
+        <div class="module_4-header">
+            <p>OUR PROJECT</p>
+            <h1>WHY WE ARE BEST</h1>
+        </div>
+        <div class="module_4-content">
+            <div class="module_4-image">
+                <img id="mainImage" src="Pic_2.webp" alt="Main Image"> <!-- Default image -->
+            </div>
+            <div class="module_4-list">
+                <div class="module_4-item" onclick="changeImage('Pic_1.webp')">
+                    <h3>Genderless Kei – Japan’s Hot</h3>
+                    <p>Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of...</p>
+                </div>
+                <div class="module_4-item active" onclick="changeImage('Pic_2.webp')">
+                    <h3>Better Strategy & Quality</h3>
+                    <p>Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of...</p>
+                </div>
+                <div class="module_4-item" onclick="changeImage('Pic_3.webp')">
+                    <h3>Genderless Kei – Japan’s Hot</h3>
+                    <p>Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="module_5">
+        <div class="stats-container">
+            <h2>Experts Growts</h2>
+            <h3>Our Company Growth</h3>
+            <div class="stats">
+                <div class="stat">
+                    <i class="fas fa-heart"></i>
+                    <p>199+</p>
+                    <span>Staticfied Customers</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <p>1591+</p>
+                    <span>Days Of Operation</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-tasks"></i>
+                    <p>283+</p>
+                    <span>Complete Project</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <p>75+</p>
+                    <span>Win Awards</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="module_6">
+        <div class="feedback-container">
+            <h2>CLIENT'S FEEDBACK</h2>
+            <h1>PEOPLE SAY'S ABOUT US !</h1>
+            <p>Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original.</p>
+            <p class="author"><span>JANNAT TUMPA</span> - COO, AMERIMAR ENTERPRISES, INC.</p>
+        </div>
+    </div>
+
+    <div class="module_7">
+        <div class="footer-section"><img src="IMG_6555 (1).PNG" alt=""></div>
+        <div class="footer-section"><img src="IMG_6555 (2).PNG" alt=""></div>
+        <div class="footer-section"><img src="IMG_6555 (3).PNG" alt=""></div>
+        <div class="footer-section"><img src="IMG_6555.PNG" alt=""></div>
+        <div class="footer-section"><img src="IMG_6556 (1).PNG" alt=""></div>
+        <div class="footer-section"><img src="IMG_6556.PNG" alt=""></div>
+    </div>
+
+</body>
+</html>
